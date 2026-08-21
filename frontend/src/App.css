@@ -1,0 +1,114 @@
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar a {
+  color: var(--text-h);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  text-align: left;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.vehicle-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: left;
+}
+
+.vehicle-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--text-h);
+}
+
+.vehicle-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.status-AVAILABLE {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.status-BOOKED,
+.status-MAINTENANCE {
+  background: var(--social-bg);
+  color: var(--text);
+}
