@@ -16,8 +16,8 @@ function LoginForm() {
       password: password,
     })
       .then((response) => {
-        login(response.data);
-        setMessage("Welcome back, " + response.data.name + "!");
+        login(response.data.user, response.data.token);
+        setMessage("Welcome back, " + response.data.user.name + "!");
       })
       .catch((error) => {
         setMessage("Invalid email or password.");

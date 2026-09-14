@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useUser } from "../context/UserContext";
 
@@ -7,6 +7,14 @@ function VehicleCard({ vehicle, onBooked }) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [message, setMessage] = useState("");
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/api/reviews/vehicle/${vehicle.id}`)
+      .then((response) => {
+        setReviews(response.data);
+      });
+  }, [vehicle.id]);
 
   const handleBook = () => {
     if (!startDate || !endDate) {
@@ -29,6 +37,15 @@ function VehicleCard({ vehicle, onBooked }) {
 
   return (
     <div className="vehicle-card">
+      <img
+        src={vehicle.imageUrl || "https://placehold.co/300x180?text=No+Image"}
+        alt={vehicle.name}
+        className="vehicle-image"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://placehold.co/300x180?text=No+Image";
+        }}
+      />
       <h3>{vehicle.name}</h3>
       <p>Type: {vehicle.type}</p>
       <p>Price per day: ₹{vehicle.pricePerDay}</p>
@@ -57,6 +74,17 @@ function VehicleCard({ vehicle, onBooked }) {
       )}
 
       {message && <p className="message">{message}</p>}
+
+      {reviews.length > 0 && (
+        <div style={{ marginTop: 12 }}>
+          <p><strong>Reviews:</strong></p>
+          {reviews.map((r) => (
+            <p key={r.id} className="message">
+              {r.rating}/5 — {r.comment}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

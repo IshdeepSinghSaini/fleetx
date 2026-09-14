@@ -11,13 +11,12 @@ function App() {
   return (
     <div className="page">
       <Navbar />
-      <h1>Welcome to FleetX</h1>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/bookings" element={<MyBookingsPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/register" element={<div className="page-inner"><RegisterPage /></div>} />
+        <Route path="/login" element={<div className="page-inner"><LoginPage /></div>} />
+        <Route path="/bookings" element={<div className="page-inner"><MyBookingsPage /></div>} />
+        <Route path="/admin" element={<div className="page-inner"><AdminPage /></div>} />
       </Routes>
     </div>
   );

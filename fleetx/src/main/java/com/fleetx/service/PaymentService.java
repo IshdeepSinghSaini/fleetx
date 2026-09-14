@@ -23,6 +23,11 @@ public class PaymentService {
         Booking booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found"));
 
+        Payment existing = paymentRepository.findByBookingId(bookingId);
+        if (existing != null) {
+            throw new RuntimeException("This booking already has a payment recorded (status: " + existing.getStatus() + ")");
+        }
+
         Payment payment = new Payment();
         payment.setBooking(booking);
         payment.setAmount(booking.getTotalPrice());
