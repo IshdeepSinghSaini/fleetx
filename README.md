@@ -45,7 +45,7 @@ Built as an intermediate-level project covering full-stack development (SDE), ba
 
 ```
 FleetX/
-├── fleetx/          Spring Boot backend
+├── backend/          Spring Boot backend
 ├── frontend/         React frontend
 ├── analytics/
 │   ├── sql/          Analytics SQL queries
@@ -58,7 +58,7 @@ FleetX/
 **Prerequisites:** Java 21+, Node.js, PostgreSQL running locally.
 
 1. Create a PostgreSQL database named `fleetx`.
-2. Copy `fleetx/src/main/resources/application.properties.example` to `application.properties` and fill in your database credentials.
+2. Copy `backend/src/main/resources/application.properties.example` to `application.properties` and fill in your database credentials.
 3. From the project root, install dependencies once:
    ```bash
    npm install

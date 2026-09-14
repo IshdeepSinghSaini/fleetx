@@ -2,7 +2,7 @@
   "name": "fleetx",
   "private": true,
   "scripts": {
-    "backend": "cd fleetx && .\\run-backend.cmd",
+    "backend": "cd backend && .\\run-backend.cmd",
     "frontend": "cd frontend && npm run dev",
     "dev": "concurrently -n backend,frontend -c blue,green \"npm run backend\" \"npm run frontend\""
   },

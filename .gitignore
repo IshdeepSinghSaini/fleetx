@@ -1,6 +1,6 @@
 # Backend
-fleetx/target/
-fleetx/src/main/resources/application.properties
+backend/target/
+backend/src/main/resources/application.properties
 
 # Frontend
 frontend/node_modules/

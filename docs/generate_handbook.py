@@ -694,7 +694,7 @@ bullets([
 h2("10.2 Pehli Baar Setup")
 bullets([
     "PostgreSQL mein 'fleetx' naam ka database banao",
-    "<font face='Courier'>fleetx/src/main/resources/application.properties</font> file mein database ka username/password daalo",
+    "<font face='Courier'>backend/src/main/resources/application.properties</font> file mein database ka username/password daalo",
     "Root folder mein: <font face='Courier'>npm install</font>",
     "Frontend folder mein: <font face='Courier'>cd frontend &amp;&amp; npm install</font>",
 ])
